@@ -15,3 +15,24 @@ The author assumes no responsibility or liability for any damage, data loss, dev
 Users are responsible for understanding the risks associated with root access and privileged operations.
 
 Use this project at your own risk.
+
+## How It Works
+
+This script demonstrates the potential risks of running untrusted shell scripts with root privileges on Android devices.
+
+The script works as follows:
+
+1. Detects available block devices under `/dev/block/`.
+2. Checks the number of detected partitions for each device.
+3. Simulates the type of destructive commands that could be executed by a malicious or unsafe script.
+4. Displays the possible consequences without actually modifying, erasing, or writing data to any storage device.
+
+The script does not execute any `dd` commands or perform any destructive operations.
+
+## Technical Background
+
+Android devices expose storage devices through Linux block device interfaces.
+
+Paths such as `/dev/block/sdX` represent storage devices, while `/dev/block/by-name/` provides human-readable names for partitions.
+
+Commands that directly write to block devices can potentially overwrite system partitions, boot partitions, or user data partitions if misused.
