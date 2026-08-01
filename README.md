@@ -36,3 +36,11 @@ Android devices expose storage devices through Linux block device interfaces.
 Paths such as `/dev/block/sdX` represent storage devices, while `/dev/block/by-name/` provides human-readable names for partitions.
 
 Commands that directly write to block devices can potentially overwrite system partitions, boot partitions, or user data partitions if misused.
+
+## Testing
+
+This script has been tested on my personal Android device with root privileges enabled.
+
+The test was completed successfully, and no data loss, system damage, or device malfunction occurred during testing.
+
+However, different Android devices may have different partition layouts and configurations. Successful testing on one device does not guarantee the same result on other devices.
